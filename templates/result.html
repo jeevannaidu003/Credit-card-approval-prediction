@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+}
+
+.result-card{
+
+background:white;
+
+width:700px;
+
+max-width:90%;
+
+border-radius:25px;
+
+padding:50px;
+
+text-align:center;
+
+box-shadow:0 20px 60px rgba(0,0,0,.2);
+
+animation:fade .7s;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.icon{
+
+font-size:70px;
+
+margin-bottom:20px;
+
+}
+
+.result{
+
+font-size:38px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}
+
+.confidence{
+
+font-size:22px;
+
+margin-top:30px;
+
+}
+
+.progress{
+
+margin:25px auto;
+
+width:100%;
+
+height:18px;
+
+background:#e5e7eb;
+
+border-radius:30px;
+
+overflow:hidden;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+width:{{confidence}}%;
+
+background:{{color}};
+
+border-radius:30px;
+
+transition:2s;
+
+}
+
+.risk{
+
+font-size:24px;
+
+font-weight:600;
+
+margin-top:20px;
+
+color:#111827;
+
+}
+
+.recommendation{
+
+margin-top:30px;
+
+line-height:1.9;
+
+font-size:18px;
+
+color:#4b5563;
+
+}
+
+.home-btn{
+
+margin-top:45px;
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.home-btn:hover{
+
+transform:translateY(-5px);
+
+background:#1d4ed8;
+
+}
+
+.footer{
+
+margin-top:35px;
+
+font-size:14px;
+
+color:#9ca3af;
+
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="result-card">
+
+<div class="icon">
+
+{{icon}}
+
+</div>
+
+<div class="result"
+
+style="color:{{color}};">
+
+{{prediction}}
+
+</div>
+
+<h2>
+
+Machine Learning Prediction
+
+</h2>
+
+<div class="confidence">
+
+Confidence Score
+
+<strong>
+
+{{confidence}}%
+
+</strong>
+
+</div>
+
+<div class="progress">
+
+<div class="progress-bar"></div>
+
+</div>
+
+<div class="risk">
+
+Risk Level :
+
+<span style="color:{{color}}">
+
+{{risk}}
+
+</span>
+
+</div>
+
+<div class="recommendation">
+
+{{recommendation}}
+
+</div>
+
+<a href="/">
+
+<button class="home-btn">
+
+Predict Another Application
+
+</button>
+
+</a>
+
+<div class="footer">
+
+CreditWise AI • Credit Card Approval Prediction
+
+</div>
+
+</div>
+
+</body>
+
+</html>

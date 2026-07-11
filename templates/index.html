@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CreditWise AI</title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="{{ url_for('static',filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-credit-card"></i>
+
+<span>CreditWise AI</span>
+
+</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#predict">Predict</a></li>
+
+<li><a href="#features">Features</a></li>
+
+<li><a href="#about">About</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+
+AI Powered Credit Card Approval Prediction
+
+</h1>
+
+<p>
+
+Predict credit card approval instantly using Machine Learning.
+
+Fast, Secure and Accurate.
+
+</p>
+
+<a href="#predict">
+
+<button class="hero-btn">
+
+Start Prediction
+
+</button>
+
+</a>
+
+</div>
+
+<div class="hero-right">
+
+<img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80">
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat-card">
+
+<h2>95%</h2>
+
+<p>Model Accuracy</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>AI</h2>
+
+<p>Machine Learning Powered</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>24/7</h2>
+
+<p>Instant Prediction</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>Secure</h2>
+
+<p>No Personal Data Stored</p>
+
+</div>
+
+</section>
+
+<section id="features">
+
+<h2 class="section-title">
+
+Why Choose CreditWise AI?
+
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>AI Powered</h3>
+
+<p>
+
+Built using advanced Machine Learning algorithms to predict approval decisions.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>Instant Results</h3>
+
+<p>
+
+Receive approval predictions within seconds.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Secure</h3>
+
+<p>
+
+Your information is processed securely.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-cloud"></i>
+
+<h3>Cloud Ready</h3>
+
+<p>
+
+Deployable on IBM Cloud, Render and Railway.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="predict">
+
+<h2 class="section-title">
+
+Applicant Information
+
+</h2>
+
+<form action="/predict" method="POST" class="prediction-form">
+
+<div class="form-grid">
+<!-- Row 1 -->
+
+<div class="form-group">
+    <label>Gender</label>
+    <select name="CODE_GENDER" required>
+        <option value="">Select</option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Own Car</label>
+    <select name="FLAG_OWN_CAR" required>
+        <option value="">Select</option>
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+    </select>
+</div>
+
+<!-- Row 2 -->
+
+<div class="form-group">
+    <label>Own House</label>
+    <select name="FLAG_OWN_REALTY" required>
+        <option value="">Select</option>
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Number of Children</label>
+    <input type="number" name="CNT_CHILDREN" min="0" required>
+</div>
+
+<!-- Row 3 -->
+
+<div class="form-group">
+    <label>Annual Income</label>
+    <input type="number"
+           name="AMT_INCOME_TOTAL"
+           placeholder="Annual Income"
+           required>
+</div>
+
+<div class="form-group">
+    <label>Income Type</label>
+
+    <select name="NAME_INCOME_TYPE" required>
+
+    <option value="Commercial associate">Commercial associate</option>
+
+    <option value="Pensioner">Pensioner</option>
+
+    <option value="State servant">State servant</option>
+
+    <option value="Student">Student</option>
+
+    <option value="Working">Working</option>
+
+</select>
+
+</div>
+
+<!-- Row 4 -->
+
+<div class="form-group">
+
+<label>Education</label>
+
+<select name="NAME_EDUCATION_TYPE" required>
+
+<option value="Academic degree">Academic degree</option>
+
+<option value="Higher education">Higher education</option>
+
+<option value="Incomplete higher">Incomplete higher</option>
+
+<option value="Lower secondary">Lower secondary</option>
+
+<option value="Secondary / secondary special">Secondary / secondary special</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Family Status</label>
+
+<select name="NAME_FAMILY_STATUS" required>
+
+<option value="Civil marriage">Civil marriage</option>
+
+<option value="Married">Married</option>
+
+<option value="Separated">Separated</option>
+
+<option value="Single / not married">Single / not married</option>
+
+<option value="Widow">Widow</option>
+
+</select>
+
+</div>
+
+<!-- Row 5 -->
+
+<div class="form-group">
+
+<label>Housing Type</label>
+
+<select name="NAME_HOUSING_TYPE" required>
+
+<option value="Co-op apartment">Co-op apartment</option>
+
+<option value="House / apartment">House / apartment</option>
+
+<option value="Municipal apartment">Municipal apartment</option>
+
+<option value="Office apartment">Office apartment</option>
+
+<option value="Rented apartment">Rented apartment</option>
+
+<option value="With parents">With parents</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Occupation</label>
+
+<select name="OCCUPATION_TYPE" required>
+
+<option value="Accountants">Accountants</option>
+
+<option value="Cleaning staff">Cleaning staff</option>
+
+<option value="Cooking staff">Cooking staff</option>
+
+<option value="Core staff">Core staff</option>
+
+<option value="Drivers">Drivers</option>
+
+<option value="HR staff">HR staff</option>
+
+<option value="High skill tech staff">High skill tech staff</option>
+
+<option value="IT staff">IT staff</option>
+
+<option value="Laborers">Laborers</option>
+
+<option value="Low-skill Laborers">Low-skill Laborers</option>
+
+<option value="Managers">Managers</option>
+
+<option value="Medicine staff">Medicine staff</option>
+
+<option value="Private service staff">Private service staff</option>
+
+<option value="Realty agents">Realty agents</option>
+
+<option value="Sales staff">Sales staff</option>
+
+<option value="Secretaries">Secretaries</option>
+
+<option value="Security staff">Security staff</option>
+
+<option value="Unknown">Unknown</option>
+
+<option value="Waiters/barmen staff">Waiters/barmen staff</option>
+
+</select>
+
+</div>
+
+<!-- Row 6 -->
+
+<div class="form-group">
+
+<label>Age (Years)</label>
+
+<input type="number"
+
+name="AGE"
+
+min="18"
+
+max="100"
+
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Employment Years</label>
+
+<input type="number"
+
+name="EMPLOYMENT_YEARS"
+
+min="0"
+
+max="50"
+
+required>
+
+</div>
+
+<!-- Row 7 -->
+
+<div class="form-group">
+
+<label>Family Members</label>
+
+<input type="number"
+
+name="CNT_FAM_MEMBERS"
+
+step="0.5"
+
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Work Phone</label>
+
+<select name="FLAG_WORK_PHONE">
+
+<option value="1">Yes</option>
+
+<option value="0">No</option>
+
+</select>
+
+</div>
+
+<!-- Row 8 -->
+
+<div class="form-group">
+
+<label>Phone</label>
+
+<select name="FLAG_PHONE">
+
+<option value="1">Yes</option>
+
+<option value="0">No</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Email</label>
+
+<select name="FLAG_EMAIL">
+
+<option value="1">Yes</option>
+
+<option value="0">No</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="button-area">
+
+<button class="predict-btn" type="submit">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+Predict Credit Approval
+
+</button>
+
+</div>
+
+</form>
+
+</section>
+<!-- ===================== ABOUT SECTION ===================== -->
+
+<section id="about" class="about-section">
+
+    <div class="about-container">
+
+        <div class="about-left">
+
+            <h2>About CreditWise AI</h2>
+
+            <p>
+
+                CreditWise AI is an intelligent Credit Card Approval Prediction
+                platform developed using Machine Learning and Flask.
+
+            </p>
+
+            <p>
+
+                The system analyzes applicant information such as income,
+                employment, education, housing and family details to predict
+                whether a credit card application is likely to be approved.
+
+            </p>
+
+            <p>
+
+                This project demonstrates an end-to-end Machine Learning
+                workflow including data preprocessing, model training,
+                evaluation and real-time deployment.
+
+            </p>
+
+        </div>
+
+        <div class="about-right">
+
+            <div class="tech-card">
+
+                <h3>Technology Stack</h3>
+
+                <div class="tech-grid">
+
+                    <div class="tech">
+                        <i class="fa-brands fa-python"></i>
+                        <span>Python</span>
+                    </div>
+
+                    <div class="tech">
+                        <i class="fa-solid fa-flask"></i>
+                        <span>Flask</span>
+                    </div>
+
+                    <div class="tech">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Machine Learning</span>
+                    </div>
+
+                    <div class="tech">
+                        <i class="fa-solid fa-database"></i>
+                        <span>Pandas</span>
+                    </div>
+
+                    <div class="tech">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Scikit-Learn</span>
+                    </div>
+
+                    <div class="tech">
+                        <i class="fa-solid fa-code"></i>
+                        <span>HTML • CSS • JS</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <h2>CreditWise AI</h2>
+
+        <p>
+
+            Intelligent Credit Card Approval Prediction System
+
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="#"><i class="fab fa-github"></i></a>
+
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+
+            <a href="#"><i class="fas fa-envelope"></i></a>
+
+        </div>
+
+        <hr>
+
+        <p>
+
+            © 2026 CreditWise AI • Developed by
+            <strong>V. Jeevan Naidu</strong>
+
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- ===================== LOADING OVERLAY ===================== -->
+
+<div id="loading-screen">
+
+    <div class="loader"></div>
+
+    <h2>Analyzing Application...</h2>
+
+    <p>
+
+        AI is evaluating applicant information.
+
+    </p>
+
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+
+<script src="{{ url_for('static',filename='js/script.js') }}"></script>
+
+<script>
+
+const form=document.querySelector(".prediction-form");
+
+const loading=document.getElementById("loading-screen");
+
+form.addEventListener("submit",function(){
+
+loading.style.display="flex";
+
+});
+
+</script>
+
+</body>
+
+</html>
